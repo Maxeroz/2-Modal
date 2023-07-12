@@ -18,11 +18,9 @@ const openModal = function () {
 for (let i = 0; i < btnsOpenModals.length; i++)
   btnsOpenModals[i].addEventListener('click', openModal);
 
-// btnClosedModal.addEventListener('click', function () {
-//   modal.classList.add('hidden');
-//   overlay.classList.add('hidden');
-// });
-
 btnClosedModal.addEventListener('click', closeModal);
-
 overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+});
